@@ -34,7 +34,7 @@ def index():
         embeddings = generate_embeddings(resumes)
 
         # Perform clustering using Agglomerative Hierarchical Clustering
-        num_clusters = 5  # You can make this dynamic based on user input
+        num_clusters = 10  # You can make this dynamic based on user input
         clustering_model = AgglomerativeClustering(n_clusters=num_clusters)
         labels = clustering_model.fit_predict(embeddings)
 
