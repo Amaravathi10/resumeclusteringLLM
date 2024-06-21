@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clustering Results</title>
+</head>
+<body>
+    <h1>Clustering Results</h1>
+    {% for cluster, files in clusters.items() %}
+        <h2>Cluster {{ cluster }}</h2>
+        <ul>
+            {% for file in files %}
+                <li>{{ file }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    <a href="/">Go back</a>
+</body>
+</html>
