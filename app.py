@@ -24,17 +24,17 @@ def index():
         stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
         df = pd.read_csv(stream)
 
-        if 'Resume' not in df.columns or 'Filename' not in df.columns:
+        if 'Resume' not in df.columns or 'Category' not in df.columns:
             return "The uploaded CSV file does not contain the required columns 'resume_text' and 'file_name'.", 400
 
         resumes = df['Resume'].tolist()
-        file_names = df['Filename'].tolist()
+        file_names = df['Category'].tolist()
 
         # Generate embeddings
         embeddings = generate_embeddings(resumes)
 
         # Perform clustering using Agglomerative Hierarchical Clustering
-        num_clusters = 10  # You can make this dynamic based on user input
+        num_clusters = 25  # You can make this dynamic based on user input
         clustering_model = AgglomerativeClustering(n_clusters=num_clusters)
         labels = clustering_model.fit_predict(embeddings)
 
