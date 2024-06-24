@@ -6,6 +6,7 @@ import io
 
 app = Flask(__name__)
 
+
 # Load a pre-trained sentence transformer model
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 
