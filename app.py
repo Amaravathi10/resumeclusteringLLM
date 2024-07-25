@@ -90,7 +90,7 @@ def index():
 
         return render_template('result.html', clusters=sorted_clusters, summaries=cluster_summaries, num_clusters=num_clusters)
 
-    return render_template('upload.html')
+    return render_template('index.html')
 
 @app.route('/search', methods=['POST'])
 def search():
